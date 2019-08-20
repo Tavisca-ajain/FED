@@ -45,7 +45,25 @@
 			background-color: #555;
 		}
 //--------------------------------------------------------
-		}
+.Search-Container{
+	text-align: center;
+}
+.Search-Container input{
+	height: 40px;
+	width: 300px;
+	margin: 20px;
+	font-size: 17px;
+}
+.Search-Container button{
+	height: 40px;
+	width: 100px;
+}
+.Item-Table{
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	border-color: black;
+	}
 	</style>
 </head>
 <body>
@@ -84,7 +102,22 @@
 	<footer>FOOTER</footer>
 
 <script>
-
+function searchItem() {
+		var a, txtValue;
+		var input = document.getElementById("Input");
+		var filter = input.value.toUpperCase();
+		var list = document.getElementById("List");
+		var listItem = list.getElementsByTagName("li");
+		for (var i = 0; i < listItem.length; i++) {
+				a = listItem[i].getElementsByTagName("a")[0];
+				txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						listItem[i].style.display = "";
+				} else {
+						listItem[i].style.display = "none";
+				}
+		}
+}
 </script>
 
 </body>
