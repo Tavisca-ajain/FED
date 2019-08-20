@@ -1,124 +1,72 @@
-<!Doctype html>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello</title>
-	<style type="text/css">
-		*{
-			box-sizing: border-box;
-		}
-		header{
-			text-align: center;
-			padding: 25px 20px;
-			font-size: 20px;
-		}
-		footer{
-			text-align: center;
-			padding: 25px 20px;
-			font-size: 20px;
-		}
-		.Menu{
-			width: 22%;
-			float: left;
-			margin: 10px;
-			text-align: center;
-			height: 450px;
-		}
-		.Content{
-			width: 75%;
-			float: left;
-			margin: 10px;
-			text-align: center;
-			height: 450px;
-		}
-		ul{
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-		}
-		li a{
-			display: block;
-			padding: 8px 10px;
-			text-decoration: none;
-		}
-		li a:hover{
-			background-color: #555;
-		}
-//--------------------------------------------------------
-.Search-Container{
-	text-align: center;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
-.Search-Container input{
-	height: 40px;
-	width: 300px;
-	margin: 20px;
-	font-size: 17px;
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
 }
-.Search-Container button{
-	height: 40px;
-	width: 100px;
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
 }
-.Item-Table{
-	height: 200px;
-	width: 200px;
-	text-align: center;
-	border-color: black;
-	}
-	</style>
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
 </head>
 <body>
-	<header>HEADER</header>
 
-	<div class = "Menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><a href="#Item1">ITEM 1</a></li>
-			<li><a href="#Item2">ITEM 2</a></li>
-			<li><a href="#Item3">ITEM 3</a></li>
-			<li><a href="#Item4">ITEM 4</a></li>
-			<li><a href="#Item5">ITEM 5</a></li>
-		</ul>
+<h1>HEADER</h1>
 
-	</div>
-
-	<div class = "Content">
-
-		<div class="Search-Container">
-			<input type="text" id="Input" onkeyup="searchItem()" placeholder="Search...">
-			<BUTTON>ADD</BUTTON>
-
-			<ul id="List">
-  				<li><a href="#">I</a></li>
-  				<li><a href="#">It</a></li>
-  				<li><a href="#">Ite</a></li>
-  				<li><a href="#">Item</a></li>
-  				<li><a href="#">Item1</a></li>
-  				<li><a href="#">Item12</a></li>
-  				<li><a href="#">Item123</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<footer>FOOTER</footer>
-
-<script>
-function searchItem() {
-		var a, txtValue;
-		var input = document.getElementById("Input");
-		var filter = input.value.toUpperCase();
-		var list = document.getElementById("List");
-		var listItem = list.getElementsByTagName("li");
-		for (var i = 0; i < listItem.length; i++) {
-				a = listItem[i].getElementsByTagName("a")[0];
-				txtValue = a.textContent || a.innerText;
-				if (txtValue.toUpperCase().indexOf(filter) > -1) {
-						listItem[i].style.display = "";
-				} else {
-						listItem[i].style.display = "none";
-				}
-		}
-}
-</script>
-
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Todo')">Todo</button>
+  <button class="tablinks" onclick="openCity(event, 'User_Details')">User Details</button>
+  <button class="tablinks" onclick="openCity(event, 'Setting')">Setting</button>
+  <button class="tablinks" onclick="openCity(event, 'Logout')">Logout</button>
+</div>
+<div id="tab_contents">
+    <div id="Todo"" class="tabcontent">
+        <p>todo</p>
+    </div>
+            
+    <div id="User_Details" class="tabcontent">
+        <p>User details</p>
+    </div>
+            
+    <div id="Setting" class="tabcontent">
+        <p>setting</p>
+    </div>
+</div>
+<h1>FOOTER</h1>
+<script src="ScriptForMyHtmlPage.js"></script>
 </body>
-</html>
+</html> 
