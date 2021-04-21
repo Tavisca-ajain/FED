@@ -21,6 +21,7 @@ function GetContent(content) {
     document.getElementById(content).style.display = "block";
 }
 
+
 function SubmitData(){
     var user = document.getElementById("username");
     var password = document.getElementById("password");
